@@ -26,7 +26,6 @@
     }
   </style>
 
-  <!-- Firebase COMPAT -->
   <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-firestore-compat.js"></script>
 </head>
@@ -59,7 +58,7 @@
   </div>
 
   <script>
-    // 🔥 Configuració Firebase
+
     const firebaseConfig = {
       apiKey: "AIzaSyAr3wihn1_y21wyJUsXkJXYsFLPpdIUWgw",
       authDomain: "newfirebase-65e29.firebaseapp.com",
@@ -83,7 +82,7 @@
       setTimeout(() => message.classList.remove("show"), 2500);
     }
 
-    // 🔄 Carregar estudiants en temps real
+
     estudiantsRef.orderBy("creatEl", "asc").onSnapshot((snapshot) => {
       llista.innerHTML = "";
 
@@ -101,12 +100,12 @@
           </td>
         `;
 
-        // ✏️ EDITAR
+   
         fila.querySelector(".editar").addEventListener("click", () => {
           window.location.href = `edit.html?id=${doc.id}`;
         });
 
-        // 🗑️ ELIMINAR
+    
         fila.querySelector(".eliminar").addEventListener("click", () => {
           estudiantsRef.doc(doc.id).delete()
             .then(() => showMessage("Estudiant eliminat correctament", "success"))
